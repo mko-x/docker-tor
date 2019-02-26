@@ -1,7 +1,11 @@
 version: '3.7'
+
 services:
+  # definition of tor relay service
   tor-relay:
-    build: .
+    # if you want to build yourself
+    # build: .
+    image: mk0x/docker-tor
     container_name: torRelay
     volumes:
       - /etc/localtime:/etc/localtime
@@ -11,6 +15,7 @@ services:
     networks:
       outpost_tor:
 
+# seperate tor network by creating an own
 networks:
   outpost_tor:
     driver: bridge
