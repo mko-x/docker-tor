@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  tor-relay:
+    build: .
+    container_name: torRelay
+    volumes:
+      - /etc/localtime:/etc/localtime
+    restart: unless-stopped
+    ports:
+      - 9001:9001
+    networks:
+      outpost_tor:
+
+networks:
+  outpost_tor:
+    driver: bridge
+    name: outpost_tor

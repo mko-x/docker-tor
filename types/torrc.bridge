@@ -1,0 +1,4 @@
+ORPort RELAY_PORT
+Nickname MkoTorRelayBridge
+ContactInfo CONTACT_NAME CONTACT_EMAIL
+BridgeRelay 1
