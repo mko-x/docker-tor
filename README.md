@@ -8,12 +8,15 @@ Supported types:
 - exit
 - bridge
 
-
+You probably want to change configuration if you're running an exit-node or a bridge-node.
 
 ## Config
-For simple startup just run
+For simplest startup just run:
+```bash
+docker run -p 9001:9001 mk0x/docker-tor
+```
 
-
+To set custom contact data run:
 ```bash
 docker run -p 9001:9001 -e CONTACT_NAME=yourname -e CONTACT_EMAIL=your@email.org mk0x/docker-tor
 ```

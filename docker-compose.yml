@@ -7,13 +7,28 @@ services:
     # build: .
     image: mk0x/docker-tor
     container_name: torRelay
+    # we need the time to sync
     volumes:
       - /etc/localtime:/etc/localtime
     restart: unless-stopped
+    # default public port for tor
     ports:
       - 9001:9001
+    # set a logical isolated network
     networks:
       outpost_tor:
+    # customize via env vars
+    environment:
+      # custom contact name, default generated uuid
+      - CONTACT_NAME: tor_relay-UUID
+      # custom contact email, default generated uid
+      - CONTACT_EMAIL: UUID-e@no.org
+      # desired relay type, default middle
+      - RELAY_TYPE: middle
+      # Average bandwidth allowed to use 
+      - RELAY_BANDWIDTH_RATE: '400000 KBytes'
+      # Peak bandwidth allowed to use
+      - RELAY_BANDWIDTH_BURST: '1000000 KBytes'
 
 # seperate tor network by creating an own
 networks:

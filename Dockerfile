@@ -15,6 +15,7 @@ RUN export UUID=`uuidgen`
 
 ENV CONTACT_NAME tor_relay-${UUID}
 ENV CONTACT_EMAIL ${UUID}-e@no.org
+ENV NICKNAME mko_node-${UUID}
 
 EXPOSE 9001
 
